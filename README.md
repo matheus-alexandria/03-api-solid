@@ -1,0 +1,32 @@
+# GymPass style app
+The third application develop during the Ignite Node 2022 course from Rocketseat, an API to a gympass style application.
+
+## Functional Requirements:
+
+- [  ] It must be possible to sign up;
+- [  ] It must be possible to authenticate;
+- [  ] It must be possible to get the profile of a loged user;
+- [  ] It must be possible to get the number of check-ins made by the logged user;
+- [  ] It must be possible for the user to get his check-in history;
+- [  ] It must be possible for the user to search for near gyms;
+- [  ] It must be possible for the user to search for gyms by name;
+- [  ] It must be possible for the user to check-in at a gym;
+- [  ] It must be possible to validate a user's check-in;
+- [  ] It must be possible register a gym;
+
+## Business Rules:
+
+- [  ] The user shouldn't be able to register with a duplicated email;
+- [  ] The user shouldn't be able to check-in twice at the same day;
+- [  ] The user shouldn't be able to check-in if far away from the gym (more than 100m);
+- [  ] The check-in can only be validated 20 min after created;
+- [  ] The check-in can only be validated by admin users;
+- [  ] A gym can only be registred by admin users;
+
+
+## Non-functional Requirements:
+
+- [  ] User's password must be encrypted;
+- [  ] Data must be persisted in a PostgreSQL database;
+- [  ] Every data list need to be paginated with 20 items per page;
+- [  ] Each user must be identified by a JWT (JSON web token);
