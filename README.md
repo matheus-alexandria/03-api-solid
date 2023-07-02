@@ -1,5 +1,5 @@
 # GymPass style app
-The third application develop during the Ignite Node 2022 course from Rocketseat, an API to a gympass style application.
+The third application in development during the Ignite Node 2022 course from Rocketseat, an API to a gympass style application.
 
 ## Functional Requirements:
 
