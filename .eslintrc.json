@@ -19,6 +19,7 @@
     "no-console": "off",
     "class-methods-use-this": "off",
     "import/no-unresolved": "error",
+    "no-useless-constructor": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
