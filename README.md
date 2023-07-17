@@ -3,7 +3,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 
 ## Functional Requirements:
 
-- [  ] It must be possible to sign up;
+- [x] It must be possible to sign up;
 - [  ] It must be possible to authenticate;
 - [  ] It must be possible to get the profile of a loged user;
 - [  ] It must be possible to get the number of check-ins made by the logged user;
@@ -16,7 +16,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 
 ## Business Rules:
 
-- [  ] The user shouldn't be able to register with a duplicated email;
+- [x] The user shouldn't be able to register with a duplicated email;
 - [  ] The user shouldn't be able to check-in twice at the same day;
 - [  ] The user shouldn't be able to check-in if far away from the gym (more than 100m);
 - [  ] The check-in can only be validated 20 min after created;
@@ -26,7 +26,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 
 ## Non-functional Requirements:
 
-- [  ] User's password must be encrypted;
+- [x] User's password must be encrypted;
 - [  ] Data must be persisted in a PostgreSQL database;
 - [  ] Every data list need to be paginated with 20 items per page;
 - [  ] Each user must be identified by a JWT (JSON web token);
