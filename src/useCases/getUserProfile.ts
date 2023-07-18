@@ -10,7 +10,7 @@ type GetProfileUseCaseResponse = {
   user: User;
 };
 
-export class GetProfileUseCase {
+export class GetUserProfileUseCase {
   constructor(private usersRepository: UsersRepository) {}
 
   async execute({
