@@ -4,7 +4,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 ## Functional Requirements:
 
 - [x] It must be possible to sign up;
-- [  ] It must be possible to authenticate;
+- [x] It must be possible to authenticate;
 - [  ] It must be possible to get the profile of a loged user;
 - [  ] It must be possible to get the number of check-ins made by the logged user;
 - [  ] It must be possible for the user to get his check-in history;
@@ -27,6 +27,6 @@ The third application in development during the Ignite Node 2022 course from Roc
 ## Non-functional Requirements:
 
 - [x] User's password must be encrypted;
-- [  ] Data must be persisted in a PostgreSQL database;
+- [x] Data must be persisted in a PostgreSQL database;
 - [  ] Every data list need to be paginated with 20 items per page;
 - [  ] Each user must be identified by a JWT (JSON web token);
