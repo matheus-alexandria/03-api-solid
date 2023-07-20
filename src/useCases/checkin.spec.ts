@@ -3,7 +3,7 @@ import {
 } from 'vitest';
 import { InMemoryCheckInsRepository } from '@/repositories/inMemory/inMemoryCheckInsRepository';
 import { InMemoryGymsRepository } from '@/repositories/inMemory/inMemoryGymsRepository';
-import { Decimal } from '@prisma/client/runtime';
+import { Decimal } from '@prisma/client/runtime/library';
 import { CheckInUseCase } from './checkin';
 
 let inMemoryCheckInsRepository: InMemoryCheckInsRepository;
@@ -24,8 +24,8 @@ describe('Check In Use Case', () => {
       description: '',
       phone: '',
       title: 'Test Gym',
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(10),
+      longitude: new Decimal(10),
     });
 
     vi.useFakeTimers();
@@ -84,5 +84,23 @@ describe('Check In Use Case', () => {
     });
 
     expect(checkIn.id).toEqual(expect.any(String));
+  });
+
+  it('should not be able to check in on distant gym', async () => {
+    inMemoryGymsRepository.items.push({
+      id: 'gym-02',
+      description: '',
+      phone: '',
+      title: 'Ignite Gym',
+      latitude: new Decimal(-3.768635),
+      longitude: new Decimal(-38.481573),
+    });
+
+    await expect(() => sut.execute({
+      gymId: 'gym-02',
+      userId: 'user-id-1',
+      userLatitude: -3.762637,
+      userLongitude: -38.488221,
+    })).rejects.toBeInstanceOf(Error);
   });
 });
