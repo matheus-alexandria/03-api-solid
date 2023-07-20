@@ -3,7 +3,6 @@ import {
 } from 'vitest';
 import { InMemoryCheckInsRepository } from '@/repositories/inMemory/inMemoryCheckInsRepository';
 import { InMemoryGymsRepository } from '@/repositories/inMemory/inMemoryGymsRepository';
-import { Decimal } from '@prisma/client/runtime/library';
 import { CheckInUseCase } from './checkin';
 
 let inMemoryCheckInsRepository: InMemoryCheckInsRepository;
@@ -11,7 +10,7 @@ let inMemoryGymsRepository: InMemoryGymsRepository;
 let sut: CheckInUseCase;
 
 describe('Check In Use Case', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     inMemoryCheckInsRepository = new InMemoryCheckInsRepository();
     inMemoryGymsRepository = new InMemoryGymsRepository();
     sut = new CheckInUseCase(
@@ -19,13 +18,13 @@ describe('Check In Use Case', () => {
       inMemoryGymsRepository,
     );
 
-    inMemoryGymsRepository.items.push({
+    await inMemoryGymsRepository.create({
       id: 'gym-id-1',
+      title: 'TS Gym',
       description: '',
       phone: '',
-      title: 'Test Gym',
-      latitude: new Decimal(10),
-      longitude: new Decimal(10),
+      latitude: 10,
+      longitude: 10,
     });
 
     vi.useFakeTimers();
@@ -87,13 +86,13 @@ describe('Check In Use Case', () => {
   });
 
   it('should not be able to check in on distant gym', async () => {
-    inMemoryGymsRepository.items.push({
+    await inMemoryGymsRepository.create({
       id: 'gym-02',
+      title: 'TS Gym',
       description: '',
       phone: '',
-      title: 'Ignite Gym',
-      latitude: new Decimal(-3.768635),
-      longitude: new Decimal(-38.481573),
+      latitude: -3.768635,
+      longitude: -38.481573,
     });
 
     await expect(() => sut.execute({
