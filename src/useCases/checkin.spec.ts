@@ -4,6 +4,8 @@ import {
 import { InMemoryCheckInsRepository } from '@/repositories/inMemory/inMemoryCheckInsRepository';
 import { InMemoryGymsRepository } from '@/repositories/inMemory/inMemoryGymsRepository';
 import { CheckInUseCase } from './checkin';
+import { MaxNumberOfCheckInsError } from './errors/maxNumberOfCheckInsError';
+import { MaxDistanceError } from './errors/maxDistanceError';
 
 let inMemoryCheckInsRepository: InMemoryCheckInsRepository;
 let inMemoryGymsRepository: InMemoryGymsRepository;
@@ -60,7 +62,7 @@ describe('Check In Use Case', () => {
       userId: 'user-id-1',
       userLatitude: 10,
       userLongitude: 10,
-    })).rejects.toBeInstanceOf(Error);
+    })).rejects.toBeInstanceOf(MaxNumberOfCheckInsError);
   });
 
   it('should be able to check in twice but in different days', async () => {
@@ -100,6 +102,6 @@ describe('Check In Use Case', () => {
       userId: 'user-id-1',
       userLatitude: -3.762637,
       userLongitude: -38.488221,
-    })).rejects.toBeInstanceOf(Error);
+    })).rejects.toBeInstanceOf(MaxDistanceError);
   });
 });
