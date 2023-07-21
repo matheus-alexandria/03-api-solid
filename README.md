@@ -6,7 +6,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 - [x] It must be possible to sign up;
 - [x] It must be possible to authenticate;
 - [x] It must be possible to get the profile of a loged user;
-- [  ] It must be possible to get the number of check-ins made by the logged user;
+- [x] It must be possible to get the number of check-ins made by the logged user;
 - [x] It must be possible for the user to get his check-in history;
 - [  ] It must be possible for the user to search for near gyms;
 - [  ] It must be possible for the user to search for gyms by name;
