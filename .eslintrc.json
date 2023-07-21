@@ -17,6 +17,8 @@
   ],
   "rules": {
     "no-console": "off",
+    "no-plusplus": "off",
+    "no-await-in-loop": "warn",
     "class-methods-use-this": "off",
     "import/no-unresolved": "error",
     "no-useless-constructor": "off",
