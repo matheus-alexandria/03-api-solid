@@ -1,7 +1,6 @@
 import { CheckIn, Prisma } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
 import dayjs from 'dayjs';
-import { GetResult } from '@prisma/client/runtime';
 import { CheckInsRepository } from '../checkInsRepository';
 
 export class InMemoryCheckInsRepository implements CheckInsRepository {

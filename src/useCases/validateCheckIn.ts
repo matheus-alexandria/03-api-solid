@@ -24,6 +24,7 @@ export class ValidateCheckInUseCase {
       throw new ResourceNotFoundError();
     }
 
+    checkIn.validated_at = new Date();
     await this.checkInsRepository.save(checkIn);
 
     return {
