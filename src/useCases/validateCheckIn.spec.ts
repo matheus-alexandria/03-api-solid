@@ -4,6 +4,7 @@ import {
 import { InMemoryCheckInsRepository } from '@/repositories/inMemory/inMemoryCheckInsRepository';
 import { ValidateCheckInUseCase } from './validateCheckIn';
 import { ResourceNotFoundError } from './errors/resourceNotFoundError';
+import { LateCheckInValidationError } from './errors/LateCheckInValidationError';
 
 let inMemoryCheckInsRepository: InMemoryCheckInsRepository;
 let sut: ValidateCheckInUseCase;
@@ -56,6 +57,6 @@ describe('Validate Check In Use Case', () => {
 
     await expect(() => sut.execute({
       checkInId: createdCheckIn.id,
-    })).rejects.toBeInstanceOf(Error);
+    })).rejects.toBeInstanceOf(LateCheckInValidationError);
   });
 });

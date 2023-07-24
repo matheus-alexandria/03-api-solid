@@ -19,7 +19,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 - [x] The user shouldn't be able to register with a duplicated email;
 - [x] The user shouldn't be able to check-in twice at the same day;
 - [x] The user shouldn't be able to check-in if far away from the gym (more than 100m);
-- [  ] The check-in can only be validated 20 min after created;
+- [x] The check-in can only be validated 20 min after created;
 - [  ] The check-in can only be validated by admin users;
 - [  ] A gym can only be registred by admin users;
 
