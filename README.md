@@ -11,7 +11,7 @@ The third application in development during the Ignite Node 2022 course from Roc
 - [x] It must be possible for the user to search for near gyms;
 - [x] It must be possible for the user to search for gyms by name;
 - [x] It must be possible for the user to check-in at a gym;
-- [  ] It must be possible to validate a user's check-in;
+- [x] It must be possible to validate a user's check-in;
 - [x] It must be possible register a gym;
 
 ## Business Rules:
