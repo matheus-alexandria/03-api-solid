@@ -44,7 +44,7 @@
     "import/prefer-default-export": [
       "off"
     ],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts", "**/*.config.ts"]}],
+    "import/no-extraneous-dependencies": ["off", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts", "**/*.config.ts"]}],
     "consistent-return": "off"
   },
   "settings": {

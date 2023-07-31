@@ -3,11 +3,11 @@ import { Environment } from 'vitest';
 export default <Environment>{
   name: 'prisma',
   async setup() {
-    console.log('Executou');
+    console.log('Setup');
 
     return {
       teardown() {
-        console.log('Finalizou');
+        console.log('Teardown');
       },
     };
   },
