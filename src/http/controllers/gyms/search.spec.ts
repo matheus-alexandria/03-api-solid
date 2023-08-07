@@ -14,7 +14,7 @@ describe('Search Gyms (e2e)', () => {
     await app.close();
   });
 
-  it('should be able to search for gyms', async () => {
+  it('should be able to search gyms by title', async () => {
     const { token } = await createAndAuthenticateUser(app);
 
     await request(app.server)
@@ -47,7 +47,6 @@ describe('Search Gyms (e2e)', () => {
       })
       .send();
 
-    console.log(response.body.detail);
     expect(response.statusCode).toBe(200);
     expect(response.body.gyms).toHaveLength(1);
     expect(response.body.gyms).toEqual([
