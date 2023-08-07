@@ -17,7 +17,7 @@ export async function validate(request: FastifyRequest, reply: FastifyReply) {
       checkInId,
     });
 
-    return reply.status(201).send();
+    return reply.status(204).send();
   } catch (err) {
     if (err instanceof LateCheckInValidationError) {
       return reply.status(400).send({
