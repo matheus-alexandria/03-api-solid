@@ -9,7 +9,7 @@ export async function history(request: FastifyRequest, reply: FastifyReply) {
 
   const {
     page,
-  } = userCheckInHistoryQuerySchema.parse(request.body);
+  } = userCheckInHistoryQuerySchema.parse(request.query);
 
   const fetchUserCheckInHistoryUseCase = makeFetchUserCheckInHistoryUseCase();
 
