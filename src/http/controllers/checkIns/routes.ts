@@ -1,5 +1,6 @@
 import { FastifyInstance } from 'fastify';
 import { verifyJWT } from '@/http/middlewares/verifyJWT';
+import { verifyUserRole } from '@/http/middlewares/verifyUserRole';
 import { create } from './create';
 import { history } from './history';
 import { metrics } from './metrics';
@@ -11,5 +12,5 @@ export async function checkInRoutes(app: FastifyInstance) {
   app.post('/:gymId', create);
   app.get('/history', history);
   app.get('/metrics', metrics);
-  app.patch('/:checkInId/validate', validate);
+  app.patch('/:checkInId/validate', { preHandler: [verifyUserRole('ADMIN')] }, validate);
 }
